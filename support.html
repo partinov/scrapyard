@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrapyard Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column, a wordmark rail on top, the short version as the only panel. */
+:root {
+  --bg: #0f1214; --panel: #1b1e23; --line: #3a3f47; --fg: #d3d8dd; --dim: #8a929b;
+  --rust: #d4672e; --oxide: #3cbfa9;
+  --display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --body: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #eef0f2; --panel: #ffffff; --line: #cdd2d8; --fg: #1b2026; --dim: #58616b;
+  --rust: #a8461a; --oxide: #0f7a6b; color-scheme: light; } }
+:root[data-theme="light"] {
+  --bg: #eef0f2; --panel: #ffffff; --line: #cdd2d8; --fg: #1b2026; --dim: #58616b;
+  --rust: #a8461a; --oxide: #0f7a6b; color-scheme: light; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.62 var(--body); }
+.wrap { max-width: 44rem; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; }
+.mark { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px;
+  font-family: var(--display); font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.mark b { color: var(--fg); font-size: 1.05rem; }
+.mark span { color: var(--rust); font-size: .8rem; }
+h1 { font: 700 clamp(1.7rem, 5vw, 2.3rem)/1.15 var(--display); margin: 28px 0 6px; text-wrap: balance; }
+.stamp { font: 500 .78rem/1.4 var(--display); color: var(--dim); letter-spacing: .04em; text-transform: uppercase; margin: 0 0 28px; }
+h2 { font: 700 .82rem/1.3 var(--display); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--rust); margin: 40px 0 10px; }
+h3 { font: 600 1.05rem/1.35 var(--body); margin: 28px 0 6px; text-wrap: balance; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 1.2em; display: grid; gap: 8px; }
+strong { font-weight: 600; }
+a { color: var(--oxide); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--oxide); outline-offset: 2px; border-radius: 2px; }
+code { font: .88em var(--display); background: var(--panel); border: 1px solid var(--line);
+  padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.short { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+.short p:last-child { margin: 0; }
+.table { overflow-x: auto; margin: 6px 0 14px; }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th { font: 600 .74rem/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); text-align: left; }
+th, td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+td:first-child { white-space: nowrap; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.addr { font: 600 1rem var(--display); }
+.pending { font: 600 .8rem var(--display); color: var(--rust); border: 1px dashed var(--rust); border-radius: 6px; padding: 4px 8px; }
+dl { margin: 0; display: grid; gap: 18px; }
+dt { font-weight: 600; margin-bottom: 4px; }
+dd { margin: 0; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--dim);
+  font: .8rem/1.5 var(--display); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="mark"><b>Scrapyard</b><span>Random Defense</span></div>
+
+<h1>Support</h1>
+<p class="stamp">Scrapyard: Random Defense · iPhone</p>
+
+<h2>Common questions</h2>
+<dl>
+<div><dt>Is there a limit on how many units I can hold?</dt>
+<dd>No. The yard scrolls as it grows; tap the expand button to see all of it. To clear out the bottom of
+the table, use <code>SELL JUNK</code> in the expanded yard, which sells every Common and Uncommon, or
+<code>BULK SELL</code> to choose exactly which units go.</dd></div>
+
+<div><dt>How do I fuse units?</dt>
+<dd>Drag one card onto another to fuse a pair, or tap <code>FUSE READY</code> when it lights up. That makes
+every fusion you can complete, including recipes with three ingredients. Fusing consumes your weakest
+qualifying copies and produces one stronger unit. Each fusion multiplies that unit's damage by 1.6×, and the
+multiplier compounds. With Premium, fusions happen on their own.</dd></div>
+
+<div><dt>What are the recipes?</dt>
+<dd>Three lines, Fire, Arc and Heavy, each climbing one rarity at a time and meeting at Prime Mover, which
+takes one of each mythic. Every unit goes into exactly one recipe, and the Recipes screen shows where
+anything you hold goes next.</dd></div>
+
+<div><dt>How do stages work?</dt>
+<dd>Clear a stage — survive to wave 20 — to open the next one. There is no last stage. Every stage you clear
+for the first time makes your yard permanently a little stronger, so the stages behind you get easier while
+each new one asks a little more. Pick any stage you have opened from Main menu → Stage.</dd></div>
+
+<div><dt>What do I get for killing a boss?</dt>
+<dd>A boss arrives every tenth wave. Kill it before the clock runs out and it drops a free unit: Epic or
+better from the first boss, Legendary or better from the second on. A boss still standing when the clock runs
+out drops nothing and costs five lives.</dd></div>
+
+<div><dt>What are the twists on some stages?</dt>
+<dd>From stage 6, every third stage has a twist: Swarm (twice the enemies, half the health), Armoured (burn
+does half), Rush (a 26-second clock), Boss Rush (a boss every five waves) or Shielded (splash does half). The
+Stage screen shows a stage's twist before you play it.</dd></div>
+
+<div><dt>What is today's run?</dt>
+<dd>One run a day, the same for every player, at your record stage with the day's twist. You get one attempt
+— it is used when you start — and it pays double xp. Play on consecutive days to build a streak.</dd></div>
+
+<div><dt>I have never seen some units. Can I get all of them?</dt>
+<dd>Yes. Every unit can be pulled at its rarity, and most can also be built from the tier below; the
+Recipes screen labels each ingredient pull, build or pull or build. The rarest are the Epic and Legendary
+ones that are only pulled, such as Derrick Colossus and Gantry Crane; boss drops come from exactly those
+tables.</dd></div>
+
+<div><dt>Why did my upgrade fail?</dt>
+<dd>Upgrades can fail, and get less reliable the more a unit already has. The gas is spent either way. The
+Steady Hands skill improves the odds.</dd></div>
+
+<div><dt>What is the difference between the pull tiers?</dt>
+<dd>Price and floor. Scrap is cheap and mostly Common, Standard is the ordinary table, and Prime costs more
+and never rolls Common. Holding a pull button repeats it.</dd></div>
+
+<div><dt>How do I get gas?</dt>
+<dd>A lump every fifth wave, plus a bonus for a clean one, and the gas lottery, which is always open. Tap
+<code>GAS</code> to switch the pull row over to it.</dd></div>
+
+<div><dt>What does Premium include?</dt>
+<dd>A one-time purchase: fast-forward at 2× and 4×, auto-fuse, and auto-roll to a chosen rank. It cannot
+buy pulls, rerolls, ranks, gas or minerals. Luck in this game is never for sale.</dd></div>
+
+<div><dt>I bought Premium on another device, or reinstalled the game.</dt>
+<dd>Main menu → Settings → Premium → <code>RESTORE PURCHASES</code>.</dd></div>
+
+<div><dt>Are there ads?</dt>
+<dd>No.</dd></div>
+
+<div><dt>Can I move my progress to another device?</dt>
+<dd>Not yet. Progress is stored on the device only.</dd></div>
+</dl>
+
+<h2>Reporting a problem</h2>
+<p class="contact"><span class="addr">keksaingress@gmail.com</span></p>
+<p>Please include what you were doing, what you expected, what happened instead, and your level and the wave
+you were on. Every run is driven by a seeded simulation, so that is usually enough to reproduce it.</p>
+
+<h2>Accessibility</h2>
+<p>The game supports Dynamic Type, VoiceOver and Reduce Motion. If something is unreadable or not announced,
+please report it as a bug.</p>
+
+<footer><span>Scrapyard: Random Defense · iPhone</span><span>No account. No server. Progress stays on your device.</span></footer>
+</main>
+</body>
+</html>
